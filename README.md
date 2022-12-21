@@ -105,23 +105,14 @@ window._config = {
 4. Commit the changes to your git repository:
 
 $ git add js/config.js 
-
 $ git commit -m "configure cognito"
-
 $ git push
-
 ...
-
 Counting objects: 4, done.
-
 Compressing objects: 100% (4/4), done.
-
 Writing objects: 100% (4/4), 415 bytes | 415.00 KiB/s, done.
-
 Total 4 (delta 3), reused 0 (delta 0)
-
 To https://git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site
-
    7668ed4..683e884  master -> master
    
    
