@@ -24,7 +24,7 @@ Amazon Cognito provides two different mechanisms for authenticating users. You c
 
 Use the Amazon Cognito console to create a new user pool using the default settings. Once your pool is created, note the Pool Id. You'll use this value in a later section.
 
-####### ✅ Step-by-step directions
+###### ✅ Step-by-step directions
 
 1. Go to the Amazon Cognito Console
 
@@ -40,11 +40,11 @@ Use the Amazon Cognito console to create a new user pool using the default setti
 
 6. Note the Pool Id on the Pool details page of your newly created user pool.
 
-####### 2. Add an App Client to Your User Pool
+###### 2. Add an App Client to Your User Pool
 
 From the Amazon Cognito console select your user pool and then select the App clients section. Add a new app and make sure the Generate client secret option is deselected. Client secrets aren't supported with the JavaScript SDK. If you do create an app with a generated secret, delete it and create a new one with the correct configuration.
 
-######## ✅ Step-by-step directions
+###### ✅ Step-by-step directions
 
 1. From the Pool Details page for your user pool, select App clients from the General settings section in the left navigation bar.
 
@@ -57,6 +57,12 @@ From the Amazon Cognito console select your user pool and then select the App cl
 5. Choose Create app client.
 
 ![image](https://user-images.githubusercontent.com/115881685/208942547-c209d873-f6b6-4bed-a50b-63293a0216fc.png)
+
+6. Note the App client id for the newly created application.
+
+##### 3. Update the config.js File in Your Website
+
+The /js/config.js file contains settings for the user pool ID, app client ID and Region. Update this file with the settings from the user pool and app you created in the previous steps and commit the file back to your git repository.
 
 
 
