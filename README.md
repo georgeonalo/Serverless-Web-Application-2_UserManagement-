@@ -62,7 +62,7 @@ From the Amazon Cognito console select your user pool and then select the App cl
 
 ##### 3. Update the config.js File in Your Website
 
-The /js/config.js file contains settings for the user pool ID, app client ID and Region. Update this file with the settings from the user pool and app you created in the previous steps and commit the file back to your git repository.
+The /js/config.js file: ([https://github.com/georgeonalo/Serverless-Web-Application-1_StaticWebHosting-website-js-config.js-]), contains settings for the user pool ID, app client ID and Region. Update this file with the settings from the user pool and app you created in the previous steps and commit the file back to your git repository.
 
 
 
