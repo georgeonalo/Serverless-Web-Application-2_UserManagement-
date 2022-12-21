@@ -105,15 +105,65 @@ window._config = {
 4. Commit the changes to your git repository:
 
 $ git add js/config.js 
+
 $ git commit -m "configure cognito"
+
 $ git push
+
 ...
+
 Counting objects: 4, done.
+
 Compressing objects: 100% (4/4), done.
+
 Writing objects: 100% (4/4), 415 bytes | 415.00 KiB/s, done.
+
 Total 4 (delta 3), reused 0 (delta 0)
+
 To https://git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site
+
    7668ed4..683e884  master -> master
+   
+   Amplify Console should pick up the changes and begin building and deploying your web application.
+   
+Note: Instead of having you write the browser-side code for managing the registration, verification, and sign in flows, we provide a working implementation in the assets you deployed in the first module. The cognito-auth.js file contains the code that handles UI events and invokes the appropriate Amazon Cognito Identity SDK methods. For more information about the SDK, see the project page on GitHub.
+
+##### Implementation Validation
+
+##### ✅ Step-by-step directions
+
+
+1. Visit register.html under your website domain, or choose the Giddy Up! button on the homepage of your site.
+
+2. Complete the registration form and choose Let's Ryde. You can use your own email or enter a fake email. Make sure to choose a password that contains at least one upper-case letter, a number, and a special character. Don't forget the password you entered for later. You should see an alert that confirms that your user has been created.
+
+3. Confirm your new user using one of the two following methods.
+
+4. If you used an email address you control, you can complete the account verification process by visiting /verify.html under your website domain and entering the verification code that is emailed to you. Please note, the verification email may end up in your spam folder. For real deployments we recommend configuring your user pool to use Amazon Simple Email Service to send emails from a domain you own.
+
+5. If you used a dummy email address, you must confirm the user manually through the Cognito console.
+
+  i. From the AWS console, click Services then select Cognito under Security, Identity & Compliance.
+  ii. Choose Manage your User Pools
+  iii. Select the WildRydes user pool and click Users and groups in the left navigation bar.
+  iv. You should see a user corresponding to the email address that you submitted through the registration page. Choose that username to view the user detail page.
+  v. Choose Confirm user to finalize the account creation process.
+  
+6. After confirming the new user using either the /verify.html page or the Cognito console, visit /signin.html and log in using the email address and password you entered during the registration step.
+
+7. If successful you should be redirected to /ride.html. You should see a notification that the API is not configured.
+
+![image](https://user-images.githubusercontent.com/115881685/208949428-95b0b25d-cf60-4fb6-a4a6-028117ac0148.png)
+
+##### ⭐ Recap
+
+🔑 Amazon Cognito provides two different capabilities for managing users, federated identities and user pools. Amazon Cognito user pools can handle almost every aspect about managing users, their login credentials, handling password resets, multifactor authentication and much more!
+
+🔧 In this module you've used user pools to create a completely hosted and managed user management system that will allow us to authenticate your users and manage their user information. From there you've updated the website to use the user pool and utlized the AWS SDKs to provide a signin form on the site.
+
+##### Next
+
+✅ After you have successfully logged into your web application, you can proceed to the next module, Serverless Backend: ([https://github.com/georgeonalo/Serverless-Web-Application-3_ServerlessBackend-])
    
    
 
