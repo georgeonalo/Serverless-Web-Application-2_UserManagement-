@@ -64,5 +64,67 @@ From the Amazon Cognito console select your user pool and then select the App cl
 
 The /js/config.js file: ([https://github.com/georgeonalo/Serverless-Web-Application-1_StaticWebHosting-website-js-config.js-]), contains settings for the user pool ID, app client ID and Region. Update this file with the settings from the user pool and app you created in the previous steps and commit the file back to your git repository.
 
+##### ✅ Step-by-step directions
+
+1. On your Cloud9 development environment open js/config.js
+
+2. Update the cognito section with the correct values for the user pool and app you just created. You can find the value for userPoolId on the Pool details page of the Amazon Cognito console after you select the user pool that you created.
+
+![image](https://user-images.githubusercontent.com/115881685/208946003-6dfa5bbf-4b4b-4318-8ddd-e20648095e2b.png)
+
+You can find the value for userPoolClientId by selecting App clients from the left navigation bar. Use the value from the App client id field for the app you created in the previous section.
+
+![image](https://user-images.githubusercontent.com/115881685/208946116-d9ba9436-63a9-40be-ac34-d64f595270bf.png)
+
+The value for region should be the AWS Region code where you created your user pool. E.g. us-east-1 for the N. Virginia Region, or us-west-2 for the Oregon Region. If you're not sure which code to use, you can look at the Pool ARN value on the Pool details page. The Region code is the part of the ARN immediately after arn:aws:cognito-idp:.
+
+The updated config.js file should look like this. Note that the actual values for your file will be different:
+
+window._config = {
+
+    cognito: {
+    
+        userPoolId: 'us-west-2_uXboG5pAb', // e.g. us-east-2_uXboG5pAb
+        
+        userPoolClientId: '25ddkmj4v6hfsfvruhpfi7n4hv', // e.g. 25ddkmj4v6hfsfvruhpfi7n4hv
+        
+        region: 'us-west-2' // e.g. us-east-2
+        
+    },
+    
+    api: {
+    
+        invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod,
+        
+    }
+    
+};
+
+3. Save the modified file making sure the filename is still config.js.
+
+4. Commit the changes to your git repository:
+
+$ git add js/config.js 
+
+$ git commit -m "configure cognito"
+
+$ git push
+
+...
+
+Counting objects: 4, done.
+
+Compressing objects: 100% (4/4), done.
+
+Writing objects: 100% (4/4), 415 bytes | 415.00 KiB/s, done.
+
+Total 4 (delta 3), reused 0 (delta 0)
+
+To https://git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site
+
+   7668ed4..683e884  master -> master
+   
+   
+
 
 
