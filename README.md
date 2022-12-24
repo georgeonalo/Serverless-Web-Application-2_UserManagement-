@@ -163,7 +163,7 @@ Note: Instead of having you write the browser-side code for managing the registr
 
 ##### Next
 
-✅ After you have successfully logged into your web application, you can proceed to the next module, Serverless Backend: ([https://github.com/georgeonalo/Serverless-Web-Application-3_ServerlessBackend-])
+✅ After you have successfully logged into your web application, you can proceed to the next module, ([https://github.com/georgeonalo/Serverless-Web-Application-3_ServerlessBackend-])
    
    
 
