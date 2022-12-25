@@ -14,7 +14,7 @@ After users have a confirmed account (either using the email verification proces
 
 ### Implementation Instructions
 
-❗ Ensure you've completed the Static Web hosting step before beginning the workshop.
+❗ Ensure you've completed the [Static Web hosting](https://github.com/georgeonalo/Serverless-Web-Application-1_StaticWebHosting-) step before beginning the workshop.
 
 #### 1. Create an Amazon Cognito User Pool
 
@@ -163,7 +163,7 @@ Note: Instead of having you write the browser-side code for managing the registr
 
 ##### Next
 
-✅ After you have successfully logged into your web application, you can proceed to the next module, https://github.com/georgeonalo/Serverless-Web-Application-3_ServerlessBackend-
+✅ After you have successfully logged into your web application, you can proceed to the next module, [Serverless Backed](https://github.com/georgeonalo/Serverless-Web-Application-3_ServerlessBackend-)
    
    
 
