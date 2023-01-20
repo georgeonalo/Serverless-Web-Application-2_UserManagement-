@@ -12,19 +12,19 @@ After users have a confirmed account (either using the email verification proces
 
 ![image](https://user-images.githubusercontent.com/115881685/208940815-6fe2e016-3f87-4d96-be8f-6d7cb466b2d3.png)
 
-### Implementation Instructions
+## Implementation Instructions
 
 ❗ Ensure you've completed the [Static Web hosting](https://github.com/georgeonalo/Serverless-Web-Application-1_StaticWebHosting-) step before beginning the workshop.
 
-#### 1. Create an Amazon Cognito User Pool
+## 1. Create an Amazon Cognito User Pool
 
-##### Background
+### Background
 
 Amazon Cognito provides two different mechanisms for authenticating users. You can use Cognito User Pools to add sign-up and sign-in functionality to your application or use Cognito Identity Pools to authenticate users through social identity providers such as Facebook, Twitter, or Amazon, with SAML identity solutions, or by using your own identity system. For this module you'll use a user pool as the backend for the provided registration and sign-in pages.
 
 Use the Amazon Cognito console to create a new user pool using the default settings. Once your pool is created, note the Pool Id. You'll use this value in a later section.
 
-###### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 1. Go to the Amazon Cognito Console
 
@@ -40,11 +40,11 @@ Use the Amazon Cognito console to create a new user pool using the default setti
 
 6. Note the Pool Id on the Pool details page of your newly created user pool.
 
-###### 2. Add an App Client to Your User Pool
+## 2. Add an App Client to Your User Pool
 
 From the Amazon Cognito console select your user pool and then select the App clients section. Add a new app and make sure the Generate client secret option is deselected. Client secrets aren't supported with the JavaScript SDK. If you do create an app with a generated secret, delete it and create a new one with the correct configuration.
 
-###### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 1. From the Pool Details page for your user pool, select App clients from the General settings section in the left navigation bar.
 
@@ -60,11 +60,11 @@ From the Amazon Cognito console select your user pool and then select the App cl
 
 6. Note the App client id for the newly created application.
 
-##### 3. Update the config.js File in Your Website
+## 3. Update the config.js File in Your Website
 
 The [/js/config.js file](https://github.com/georgeonalo/Serverless-Web-Application-1_StaticWebHosting-website-js-config.js-), contains settings for the user pool ID, app client ID and Region. Update this file with the settings from the user pool and app you created in the previous steps and commit the file back to your git repository.
 
-##### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 1. On your Cloud9 development environment open js/config.js
 
@@ -80,57 +80,44 @@ The value for region should be the AWS Region code where you created your user p
 
 The updated config.js file should look like this. Note that the actual values for your file will be different:
 
+```
 window._config = {
-
     cognito: {
-    
         userPoolId: 'us-west-2_uXboG5pAb', // e.g. us-east-2_uXboG5pAb
-        
         userPoolClientId: '25ddkmj4v6hfsfvruhpfi7n4hv', // e.g. 25ddkmj4v6hfsfvruhpfi7n4hv
-        
-        region: 'us-west-2' // e.g. us-east-2
-        
-    },
-    
+        region: 'us-west-2' // e.g. us-east-2      
+    }, 
     api: {
-    
-        invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod,
-        
-    }
-    
+        invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod,     
+    }   
 };
+```
 
 3. Save the modified file making sure the filename is still config.js.
 
 4. Commit the changes to your git repository:
 
+```
 $ git add js/config.js 
-
 $ git commit -m "configure cognito"
-
 $ git push
-
 ...
-
 Counting objects: 4, done.
-
 Compressing objects: 100% (4/4), done.
-
 Writing objects: 100% (4/4), 415 bytes | 415.00 KiB/s, done.
-
 Total 4 (delta 3), reused 0 (delta 0)
-
 To https://git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site
-
-   7668ed4..683e884  master -> master
+7668ed4..683e884  master -> master
+```
+   
    
    Amplify Console should pick up the changes and begin building and deploying your web application.
    
 Note: Instead of having you write the browser-side code for managing the registration, verification, and sign in flows, we provide a working implementation in the assets you deployed in the first module. The cognito-auth.js file contains the code that handles UI events and invokes the appropriate Amazon Cognito Identity SDK methods. For more information about the SDK, see the project page on GitHub.
 
-##### Implementation Validation
+## Implementation Validation
 
-##### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 
 1. Visit register.html under your website domain, or choose the Giddy Up! button on the homepage of your site.
@@ -155,13 +142,13 @@ Note: Instead of having you write the browser-side code for managing the registr
 
 ![image](https://user-images.githubusercontent.com/115881685/208949428-95b0b25d-cf60-4fb6-a4a6-028117ac0148.png)
 
-##### ⭐ Recap
+## ⭐ Recap
 
 🔑 Amazon Cognito provides two different capabilities for managing users, federated identities and user pools. Amazon Cognito user pools can handle almost every aspect about managing users, their login credentials, handling password resets, multifactor authentication and much more!
 
 🔧 In this module you've used user pools to create a completely hosted and managed user management system that will allow us to authenticate your users and manage their user information. From there you've updated the website to use the user pool and utlized the AWS SDKs to provide a signin form on the site.
 
-##### Next
+## Next
 
 ✅ After you have successfully logged into your web application, you can proceed to the next module, [Serverless Backed](https://github.com/georgeonalo/Serverless-Web-Application-3_ServerlessBackend-)
    
